@@ -33,6 +33,7 @@ Manim is an animation engine for explanatory math videos. It's used to create pr
 -  [Help with Manim](#help-with-manim)
 -  [Contributing](#contributing)
 -  [License](#license)
+-  [Advanced Features and Examples](#advanced-features-and-examples)
 
 ## Installation
 
@@ -140,3 +141,137 @@ Our full code of conduct, and how we enforce it, can be read on [our website](ht
 ## License
 
 The software is double-licensed under the MIT license, with copyright by 3blue1brown LLC (see LICENSE), and copyright by Manim Community Developers (see LICENSE.community).
+
+## Advanced Features and Examples
+
+### 1. Quantum Mechanics Visualization: Hydrogen 1s Orbital
+
+This repository includes a sophisticated visualization of the hydrogen 1s orbital, demonstrating Manim's capabilities in scientific visualization. The implementation can be found in `hydrogen_orbital.py`:
+
+```python
+# Example usage:
+manim -pqh hydrogen_orbital.py HydrogenOrbitalScene
+```
+
+The visualization includes:
+- 3D rendering of the spherically symmetric 1s orbital
+- Interactive camera movements showing different perspectives
+- Color-coded probability density representation
+- Educational annotations and explanations
+- Smooth transitions and professional animations
+
+### 2. Text-to-Manim Converter (Natural Language Animation Generator)
+
+One of the most powerful features of this repository is the text-to-Manim converter system, which allows users to generate complex animations using natural language descriptions.
+
+#### Architecture
+
+The system consists of three main components:
+
+1. **Natural Language Parser (`manim_ml_cli.py`)**
+   - Processes natural language input
+   - Extracts key animation parameters
+   - Identifies mathematical and scientific concepts
+
+2. **MLAnimationGenerator**
+   - Converts parsed instructions into Manim scene classes
+   - Handles dynamic object creation and animation sequencing
+   - Manages scene composition and timing
+
+3. **Scene Templates**
+   - Pre-built animation patterns for common concepts
+   - Customizable parameters for flexibility
+   - Optimized for educational content
+
+#### Usage Example
+
+```bash
+python manim_ml_cli.py --description "Create a neural network with 3 layers, showing data flow from input to output" --quality high --preview
+```
+
+#### Supported Features
+
+The text-to-Manim converter supports:
+
+1. **Mathematical Concepts**
+   - Geometric shapes and transformations
+   - Function plotting and visualization
+   - Vector fields and calculus concepts
+   - Matrix operations and linear algebra
+
+2. **Machine Learning Visualizations**
+   - Neural network architectures
+   - Training processes
+   - Data flow animations
+   - Loss function optimization
+
+3. **Physics Simulations**
+   - Quantum mechanical systems
+   - Classical mechanics
+   - Wave propagation
+   - Field visualizations
+
+4. **Customization Options**
+   - Color schemes
+   - Animation timing
+   - Camera perspectives
+   - Text annotations
+
+#### Implementation Details
+
+The converter uses a pipeline architecture:
+
+1. **Text Analysis**
+   ```python
+   def parse_description(text):
+       # Extract key components
+       # Identify animation sequences
+       # Parse mathematical expressions
+   ```
+
+2. **Scene Generation**
+   ```python
+   class MLAnimationGenerator:
+       def generate_scene(self, parsed_data):
+           # Create Manim objects
+           # Set up animations
+           # Configure camera
+   ```
+
+3. **Animation Rendering**
+   ```python
+   def render_animation(scene_class):
+       # Set up rendering parameters
+       # Execute animations
+       # Handle output
+   ```
+
+### Contributing to Advanced Features
+
+We welcome contributions to both the quantum visualization system and the text-to-Manim converter. Please follow these guidelines:
+
+1. **Code Style**
+   - Follow PEP 8 guidelines
+   - Use descriptive variable names
+   - Document complex animations
+
+2. **Testing**
+   - Add unit tests for new features
+   - Include example scenes
+   - Test with various input descriptions
+
+3. **Documentation**
+   - Update this README for major features
+   - Include docstrings
+   - Provide usage examples
+
+### Future Development
+
+Planned enhancements include:
+- Enhanced natural language processing
+- More physics simulations
+- Interactive web interface
+- Real-time animation preview
+- Extended template library
+
+For more information, please refer to the documentation or join our community discussions.
