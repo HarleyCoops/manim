@@ -124,13 +124,15 @@ dmypy.json
 .vs
 *.xml
 *.iml
-media
 .eggs/
 build/
 dist/
 
 /media_dir.txt
 # ^TODO: Remove the need for this with a proper config file
+
+# Manim media files
+media/
 
 # Ignore the built dependencies
 third_party/*

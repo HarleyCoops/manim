@@ -54,7 +54,6 @@ Manim is an extremely versatile package. The following is an example `Scene` you
 ```python
 from manim import *
 
-
 class SquareToCircle(Scene):
     def construct(self):
         circle = Circle()
@@ -275,3 +274,18 @@ Planned enhancements include:
 - Extended template library
 
 For more information, please refer to the documentation or join our community discussions.
+
+## Enabling Verbose Output
+
+To enable verbose output when running Manim, you can modify the `manim.cfg` configuration file. This file is typically located in the same directory as your animation script. If it doesn't exist, you can create one.
+
+You need to set the `verbosity` option to `DEBUG` in the `[CLI]` section of the `manim.cfg` file. This setting controls the logging level, and `DEBUG` provides the most detailed output.
+
+Here's an example of what your `manim.cfg` file should look like:
+
+```ini
+[CLI]
+verbosity = DEBUG
+```
+
+The `make_logger()` function in `manim/_config/logger_utils.py` reads this setting and configures the logger accordingly. Setting `verbosity` to `DEBUG` ensures that all log messages, including detailed debugging information, are printed to the terminal.
