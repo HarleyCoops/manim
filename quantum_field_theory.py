@@ -106,13 +106,20 @@ class QuantumFieldTheoryScene(ThreeDScene):
         # 4. COLOR-CODED METRIC EQUATION
         # ----------------------------------------------------------
         metric_equation = MathTex(
-            r"\textcolor{#FF6666}{ds^2} = "
-            r"-\textcolor{#6666FF}{c^2 dt^2}"
-            r" + \textcolor{#66FF66}{dx^2}"
-            r" + \textcolor{#FF66FF}{dy^2}"
-            r" + \textcolor{#FFFF66}{dz^2}",
+            r"{ds^2} = "
+            r"-{c^2 dt^2}"
+            r" + {dx^2}"
+            r" + {dy^2}"
+            r" + {dz^2}",
             font_size=36
         ).to_corner(UR)
+
+        # Color the terms after creation
+        metric_equation[0][0:3].set_color(RED)  # ds^2
+        metric_equation[0][6:13].set_color(BLUE)  # c^2 dt^2
+        metric_equation[0][14:18].set_color(GREEN)  # dx^2
+        metric_equation[0][19:23].set_color(PURPLE)  # dy^2
+        metric_equation[0][24:28].set_color(YELLOW)  # dz^2
 
         self.add_fixed_in_frame_mobjects(metric_equation)
         self.play(Write(metric_equation), run_time=3)

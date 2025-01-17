@@ -136,3 +136,5 @@ media/
 
 # Ignore the built dependencies
 third_party/*
+
+.codegpt
